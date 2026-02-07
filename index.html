@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Week - Kutachi 😼</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="particles-container"></div>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="main-title">For My Kutachi 😼</h1>
+            <p class="subtitle">A 7-Day Journey of Love</p>
+            <div class="anniversary-badge">4 Years Together • Since Oct 6</div>
+        </div>
+    </header>
+
+    <main class="timeline">
+        <!-- Day 1-7 follow the same envelope pattern -->
+        <section id="day1" class="day-section" data-date="7" data-month="1">
+            <div class="invitation-card locked" data-day="1">
+                <div class="hearts-container">
+                    <div class="heart-top h1"></div>
+                    <div class="heart-top h2"></div>
+                </div>
+                <div class="envelope-front">
+                    <div class="wax-seal">🌹</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="day2" class="day-section" data-date="8" data-month="1">
+            <div class="invitation-card locked" data-day="2">
+                <div class="hearts-container">
+                    <div class="heart-top h1"></div>
+                    <div class="heart-top h2"></div>
+                </div>
+                <div class="envelope-front">
+                    <div class="wax-seal">💍</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="day3" class="day-section" data-date="9" data-month="1">
+            <div class="invitation-card locked" data-day="3">
+                <div class="hearts-container">
+                    <div class="heart-top h1"></div>
+                    <div class="heart-top h2"></div>
+                </div>
+                <div class="envelope-front">
+                    <div class="wax-seal">🍫</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="day4" class="day-section" data-date="10" data-month="1">
+            <div class="invitation-card locked" data-day="4">
+                <div class="hearts-container">
+                    <div class="heart-top h1"></div>
+                    <div class="heart-top h2"></div>
+                </div>
+                <div class="envelope-front">
+                    <div class="wax-seal">🧸</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="day5" class="day-section" data-date="11" data-month="1">
+            <div class="invitation-card locked" data-day="5">
+                <div class="hearts-container">
+                    <div class="heart-top h1"></div>
+                    <div class="heart-top h2"></div>
+                </div>
+                <div class="envelope-front">
+                    <div class="wax-seal">🤝</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="day6" class="day-section" data-date="12" data-month="1">
+            <div class="invitation-card locked" data-day="6">
+                <div class="hearts-container">
+                    <div class="heart-top h1"></div>
+                    <div class="heart-top h2"></div>
+                </div>
+                <div class="envelope-front">
+                    <div class="wax-seal">🫂</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="day7" class="day-section" data-date="13" data-month="1">
+            <div class="invitation-card locked" data-day="7">
+                <div class="hearts-container">
+                    <div class="heart-top h1"></div>
+                    <div class="heart-top h2"></div>
+                </div>
+                <div class="envelope-front">
+                    <div class="wax-seal">💋</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="day8" class="day-section highlight" data-date="14" data-month="1">
+            <div class="invitation-card locked" data-day="8">
+                <div class="hearts-container">
+                    <div class="heart-top h1"></div>
+                    <div class="heart-top h2"></div>
+                </div>
+                <div class="envelope-front">
+                    <div class="wax-seal">💝</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for regular messages -->
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Special Proposal Interaction (Day 8 Only) -->
+    <div id="proposal-container" class="proposal-overlay">
+        <div class="proposal-card">
+            <img id="proposal-gif"
+                src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHI1bm9uN3Nqbm9uN3Nqbm9uN3Nqbm9uN3Nqbm9uN3Nqbm9uJnB0PW0mY3Q9Zw/Lp71UqhcHh4qMHC3UX/giphy.gif"
+                alt="Cute Cat">
+            <h2 id="proposal-question">Will you be my Valentine forever, Kutachi 😼?</h2>
+            <div class="btn-group">
+                <button id="yes-btn">Yes! ❤️</button>
+                <button id="no-btn">No... 💔</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Celebration Screen -->
+    <div id="celebration-overlay" class="celebration-overlay">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHI1bm9uN3Nqbm9uN3Nqbm9uN3Nqbm9uN3Nqbm9uN3Nqbm9uJnB0PW0mY3Q9Zw/K97KkLhA7S8fCvt9pG/giphy.gif"
+            alt="Happy Cats">
+        <h1>Hehe, I knew it! I Love You, Kutachi 😼! ❤️</h1>
+        <p>Happy 4 Years (coming Oct 6) and counting...</p>
+        <button onclick="location.reload()">Back to our journey</button>
+    </div>
+
+    <div id="toast" class="toast">Oops! Not time yet. Wait for the day 😼</div>
+
+    <!-- Hidden Messages -->
+    <div style="display: none;">
+        <div id="msg-1">"Kutachi 😼, Rose Day! Indha 4 years-la evlavo roses pathirupom, aana un smile-a vida azhagana
+            rose edhuvume illa. Happy Rose Day!"</div>
+        <div id="msg-2">"Kutachi 😼, un kitta idhai solla nalla naalukaga wait pannitu irundhen. En life-la evlavo per
+            vandhu ponallum, unna paatha andha nimidam dhaan ellaame maariduchi. Unna paarkum bodhu vara andha 'chloo'
+            smile-um, nee katura anbum enaku romba special. En life mulla unna rasippa paathuka naan ready! I love you
+            so much. Will you be mine forever?"</div>
+        <div id="msg-3">"Kutachi 😼, Chocolate Day! Life sweeter-a irukkuradhuku chocolate venum nu solluvanga, aana
+            enaku nee kooda irundhale life chocolate mari sweet dhaan!"</div>
+        <div id="msg-4">"Kutachi 😼, Teddy Day! Indha teddy bear un kooda irukkum pothu, naan hug pannura andha warmth
+            feels venum nu nenacha indha teddy-a katti pidi."</div>
+        <div id="msg-5">"Kutachi 😼, Promise Day! Innaiku promise panren, un kaivida maaten. Life full-a unna
+            santhoshama vechu paathupen."</div>
+        <div id="msg-6">"Kutachi 😼, Hug Day! Unna hug pannura feel eppovume special. Andha security and love eppovume
+            venum."</div>
+        <div id="msg-7">"Kutachi 😼, Kiss Day! Sealed with love. Namma bond innum strong-a irukanum."</div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

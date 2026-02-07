@@ -1,0 +1,367 @@
+:root {
+    --primary: #ff4d6d;
+    --primary-light: #ff758f;
+    --pastel-pink: #ffc8fd;
+    --wood-bg: url('https://images.unsplash.com/photo-1463171359919-4e466835a621?q=80&w=2070&auto=format&fit=crop');
+    --glass: rgba(255, 255, 255, 0.8);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', 'Montserrat', cursive, sans-serif;
+    background:
+        radial-gradient(circle at center, #ff85a1 0%, #ff4d6d 50%, #c9184a 100%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M20 35.5L4.5 20a10 10 0 1 1 14.1-14.1L20 7.2l1.4-1.3a10 10 0 1 1 14.1 14.1L20 35.5z' fill='%23ffffff' fill-opacity='0.1'/%3E%3C/svg%3E");
+    background-blend-mode: overlay;
+    background-size: cover, 40px 40px;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: #333;
+    animation: bgMove 20s linear infinite;
+}
+
+@keyframes bgMove {
+    from {
+        background-position: center, 0 0;
+    }
+
+    to {
+        background-position: center, 100px 100px;
+    }
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    height: 80vw;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E") no-repeat center;
+    background-size: contain;
+    z-index: -1;
+    pointer-events: none;
+    animation: heartPulse 10s ease-in-out infinite;
+}
+
+@keyframes heartPulse {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.05;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.1;
+    }
+}
+
+#particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.hero {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+    text-align: center;
+}
+
+.main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    color: #fff;
+    text-shadow: 0 4px 15px rgba(255, 77, 109, 0.5);
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 600;
+    background: rgba(255, 77, 109, 0.6);
+    padding: 5px 20px;
+    border-radius: 50px;
+}
+
+.anniversary-badge {
+    margin-top: 15px;
+    background: white;
+    color: var(--primary);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.timeline {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Invitation Envelopes */
+.invitation-card {
+    background: #fff;
+    width: 280px;
+    height: 180px;
+    margin: 0 auto;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.invitation-card:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+.invitation-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-left: 140px solid transparent;
+    border-right: 140px solid transparent;
+    border-top: 100px solid #f9f9f9;
+    z-index: 5;
+}
+
+.hearts-container {
+    position: absolute;
+    top: -40px;
+    display: flex;
+    z-index: 1;
+}
+
+.heart-top {
+    width: 60px;
+    height: 60px;
+    background: var(--primary);
+    position: relative;
+    transform: rotate(-45deg);
+    margin: 0 -10px;
+}
+
+.heart-top::before,
+.heart-top::after {
+    content: '';
+    width: 60px;
+    height: 60px;
+    background: var(--primary);
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart-top::before {
+    top: -30px;
+    left: 0;
+}
+
+.heart-top::after {
+    left: 30px;
+    top: 0;
+}
+
+.h1 {
+    transform: rotate(-35deg) scale(0.8);
+}
+
+.h2 {
+    transform: rotate(-55deg) scale(0.9);
+    background: #e63253;
+}
+
+.h2::before,
+.h2::after {
+    background: #e63253;
+}
+
+.envelope-front {
+    z-index: 6;
+    font-size: 2rem;
+}
+
+/* Locked State */
+.invitation-card.locked {
+    filter: grayscale(1);
+    opacity: 0.7;
+}
+
+.invitation-card.locked:hover {
+    transform: none;
+}
+
+.invitation-card.locked::after {
+    content: '🔒';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.2rem;
+    z-index: 10;
+}
+
+/* Modal & Proposal */
+.modal-overlay,
+.proposal-overlay,
+.celebration-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content,
+.proposal-card,
+.celebration-overlay {
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    border: 10px solid var(--pastel-pink);
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* Proposal Interaction Styles (The Shizuka Style) */
+.proposal-card img {
+    width: 250px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.proposal-card h2 {
+    color: var(--primary);
+    margin-bottom: 30px;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+#yes-btn,
+#no-btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+#yes-btn {
+    background: #4CAF50;
+    color: white;
+}
+
+#no-btn {
+    background: #f44336;
+    color: white;
+}
+
+/* Celebration Styles */
+.celebration-overlay {
+    display: none;
+    flex-direction: column;
+    background: var(--pastel-pink);
+    color: #d63384;
+    z-index: 2000;
+}
+
+.celebration-overlay h1 {
+    font-size: 2.5rem;
+    margin: 20px 0;
+}
+
+.celebration-overlay img {
+    width: 300px;
+    border-radius: 20px;
+}
+
+.celebration-overlay button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background: white;
+    border-radius: 10px;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+/* Toast */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 50px;
+    display: none;
+    z-index: 3000;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(110vh) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+    }
+}
